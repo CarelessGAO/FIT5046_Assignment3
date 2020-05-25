@@ -188,10 +188,10 @@ public class Signup extends AppCompatActivity {
                         users.setDob(DOB);
                         users.setGender(gender);
                         users.setState(state);
-                        users.setCredential(credential);
                         credential.setPasswordHash(MD5.md5(etMap.get("et_confirmPassword").getText().toString()));
                         credential.setUserName(etMap.get("et_newUserName").getText().toString());
                         credential.setSignUpDate(signupDate);
+                        users.setCredential(credential);
                         new AsyncPostCredential().execute(credential);
                         new AsyncPostUser().execute(users);
                         /*while (exitFlag != 5) {

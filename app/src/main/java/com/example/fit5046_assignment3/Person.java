@@ -16,6 +16,10 @@ public class Person {
         userId++;
         personId = Integer.toString(userId);
     }
+
+    public  Person(String info){
+
+    }
     public String getPersonId() {
         return personId;
     }
