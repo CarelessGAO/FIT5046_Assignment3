@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        app:srcCompat="@drawable/ok" />
+        app:srcCompat="@drawable/logo" />
 
     <EditText
         android:id="@+id/edit_UserName"

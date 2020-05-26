@@ -1,8 +1,11 @@
 package com.example.fit5046_assignment3;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +32,14 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        View nv = navigationView.getHeaderView(0);
+        TextView currentUsername = nv.findViewById(R.id.current_username);
+        currentUsername.setText(Login.personInfo.getFirstName());
+        SharedPreferences share = MainActivity.this.getSharedPreferences(String.valueOf(Login.userid),MODE_PRIVATE);
+        String email = share.getString("email","");
+        TextView currentEmail = nv.findViewById(R.id.current_email);
+        currentEmail.setText(email);
 
         navigationView.setNavigationItemSelectedListener(this);
 
